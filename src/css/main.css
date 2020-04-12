@@ -32230,6 +32230,16 @@ legend {
 * Date: 2018-10-24T13:07:11.429Z
 */
 
+.drag-and-drop{
+  width: 100%;
+  height: 500px;
+  border-radius: 5px;
+  border: 1px dashed #bcbcbc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .cropper-container {
   direction: ltr;
   font-size: 0;
