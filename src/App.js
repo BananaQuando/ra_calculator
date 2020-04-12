@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-md-12">
+        <div className="col-md-8">
           <div className="card-hover-shadow-2x mb-3 mt-3 card">
             <div className="card-header">Calculator</div>
             <div className="card-body">
@@ -16,6 +16,11 @@ function App() {
               <button className="btn-shadow-primary btn btn-primary btn-lg">Submit</button>
             </div>
           </div>
+        </div>
+        <div className="col-md-4">
+          <div className="card-hover-shadow-2x mb-3 mt-3 card">
+            тут карточки задач по группам
+        </div>
         </div>
       </div>
     </div>
