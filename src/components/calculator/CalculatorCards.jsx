@@ -3,12 +3,7 @@ import React from "react";
 export default class TasksCards extends React.Component {
     render() {
         return (
-            <li
-                className="list-group-item"
-                draggable={this.props.draggable}
-                onDragStart={this.props.onDragStart}
-                data-item-index={this.props.index}
-            >
+            <li className="list-group-item" >
                 <div className="widget-content p-0">
                     <div className="widget-content-wrapper">
                         <div className="widget-content-left">
@@ -25,6 +20,13 @@ export default class TasksCards extends React.Component {
                             </div>
                             <div className="badge badge-danger ml-1">
                                 {this.props.data.max_time}
+                            </div>
+                            <div 
+                                className="remove-item ml-3"
+                                onClick={this.props.onClick}
+                                data-index={this.props.index}
+                            >
+                                <i className="lnr-cross-circle"> </i>
                             </div>
                         </div>
                     </div>
