@@ -3,6 +3,7 @@ import TasksCards from "./TasksCards";
 import CalculatorCards from "./CalculatorCards";
 import initialData from "../../Store/initialData";
 import calculatorData from "../../Store/calculatorData";
+import { formatTime } from "../../utils/formatter";
 
 export default class Calculator extends React.Component {
     state = {
@@ -43,20 +44,16 @@ export default class Calculator extends React.Component {
         this.calculateTime();
     }
 
+
     calculateTime = () => {
-        let min_time, avr_time, max_time;
+        let min_time = 0, avr_time = 0, max_time = 0;
         const calculatorData = this.state.calculator;
+
         calculatorData.forEach((el, index) => {
-            min_time = min_time + el.min_time;
-            avr_time = avr_time + el.avr_time;
-            max_time = max_time + el.max_time;
-            console.log(min_time);
-            console.log(avr_time);
-            console.log(max_time);
+            min_time += el.min_time;
+            avr_time += el.avr_time;
+            max_time += el.max_time;
         });
-        min_time = min_time / calculatorData.length;
-        avr_time = avr_time / calculatorData.length;
-        max_time = max_time / calculatorData.length;
 
         this.setState({
             min_time: min_time,
@@ -124,13 +121,13 @@ export default class Calculator extends React.Component {
                                                 this.state.calculator.length !== 0 
                                                 ? <>
                                                     <div className="badge badge-success ml-1">
-                                                        {this.state.min_time}
+                                                        {formatTime(this.state.min_time)}
                                                     </div>
                                                     <div className="badge badge-warning ml-1">
-                                                        {this.state.avr_time}
+                                                        {formatTime(this.state.avr_time)}
                                                     </div>
                                                     <div className="badge badge-danger ml-1">
-                                                        {this.state.max_time}
+                                                        {formatTime(this.state.max_time)}
                                                     </div>
                                                 </>
                                                 : ''

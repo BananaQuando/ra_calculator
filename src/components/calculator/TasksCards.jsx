@@ -1,4 +1,5 @@
 import React from "react";
+import { formatTime } from "../../utils/formatter";
 
 export default class TasksCards extends React.Component {
     render() {
@@ -18,13 +19,13 @@ export default class TasksCards extends React.Component {
                         </div>
                         <div className="widget-content-right">
                             <div className="badge badge-success ml-1">
-                                {this.props.data.min_time}
+                                {formatTime(this.props.data.min_time)}
                             </div>
                             <div className="badge badge-warning ml-1">
-                                {this.props.data.avr_time}
+                                {formatTime(this.props.data.avr_time)}
                             </div>
                             <div className="badge badge-danger ml-1">
-                                {this.props.data.max_time}
+                                {formatTime(this.props.data.max_time)}
                             </div>
                         </div>
                     </div>
